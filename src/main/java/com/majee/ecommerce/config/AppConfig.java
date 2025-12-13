@@ -1,4 +1,4 @@
-package com.majee.ecommerce;
+package com.majee.ecommerce.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
