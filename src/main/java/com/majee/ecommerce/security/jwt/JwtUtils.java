@@ -10,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -24,10 +23,10 @@ public class JwtUtils {
     private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
     @Value("${spring.jwt.jwtExpirationTimeInMillis}")
-    private static int jwtExpirationTimeInMillis;
+    private int jwtExpirationTimeInMillis;
 
     @Value("${spring.jwt.jwtSecret}")
-    private static String jwtSecret;
+    private String jwtSecret;
 
     public String getJwtFromHeader(HttpServletRequest request){
         String bearerToken = request.getHeader("Authorization");

@@ -28,7 +28,7 @@ public class User {
     @NotBlank
     @Size(max = 20)
     @Column(name = "username")
-    private String username;
+    private String userName;
 
     @NotBlank
     @Size(max = 50)
@@ -65,7 +65,7 @@ public class User {
     private List<Address> addresses = new ArrayList<>();
 
     public User(String username, String email, String password) {
-        this.username = username;
+        this.userName = username;
         this.email = email;
         this.password = password;
     }
