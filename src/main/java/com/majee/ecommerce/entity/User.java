@@ -64,6 +64,10 @@ public class User {
                 inverseJoinColumns = @JoinColumn(name = "address_id"))
     private List<Address> addresses = new ArrayList<>();
 
+    @ToString.Exclude
+    @OneToOne(mappedBy = "user" , cascade = {CascadeType.PERSIST , CascadeType.MERGE})
+    private Cart cart;
+
     public User(String username, String email, String password) {
         this.userName = username;
         this.email = email;
